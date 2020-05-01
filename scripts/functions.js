@@ -1,3 +1,4 @@
+//get products from local storage
 const getProducts = () => {
     let productJson = localStorage.getItem("products")
     try {
@@ -7,8 +8,10 @@ const getProducts = () => {
     }
 }
 
+//save products in local storage
 const saveProducts = (products) => localStorage.setItem("products", JSON.stringify(products))
 
+//remove product button 
 const removeProduct = (id) => {
     let productIndex = products.findIndex(item => {
         return item.id === id
@@ -18,6 +21,7 @@ const removeProduct = (id) => {
     }
 }
 
+//sum products's price
 let showSum = () => {
     sumPrices = 0
     products.forEach(element => {
@@ -26,10 +30,12 @@ let showSum = () => {
     document.querySelector("#sum").innerHTML = `$${sumPrices}`
 }
 
+//last updated
 let lastUpdated = (time) => {
     return moment(time).locale('fa').fromNow()
 }
 
+//sort products
 let sortProduct = (products, sortBy) => {
     return products.sort((a,b) => {
         if(sortBy === "byUpdated"){
@@ -54,6 +60,7 @@ let sortProduct = (products, sortBy) => {
     })
 }
 
+//craete products table
 const createElement = (product) => {
     let trProduct = document.createElement("tr")
     trProduct.setAttribute("id", product.id)
@@ -119,7 +126,7 @@ const createElement = (product) => {
     return trProduct
 }
 
-
+//render products with filters(search, available product, sort products)
 const renderProduct = (products, filters) => {
     sortProduct(products, filters.sortBy)
     let filtered = products.filter((item)=> {
