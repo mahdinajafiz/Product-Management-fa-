@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <title>ویرایش محصول</title>
+    <link href="./styles/style.css" rel="stylesheet" type="text/css">
+    <link href="./styles/editProduct.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1>ویرایش محصول</h1>
+    <div id="container">
+        <input type="text" placeholder="نام محصول..." id="productTitle">
+        <input type="text" placeholder="قیمت محصول..." id="productPrice">
+        <button id="backToHome" onclick="backToHome()">بازگشت به صفحه اصلی</button>
+        <div id="updatedTime">
+        </div>
+        <button id="removeButton" onclick="removeEditedProduct()">حذف محصول</button>
+    </div>
+    <script src="./scripts/moment.js"></script>
+    <script src="./scripts/jalali.js"></script>
+    <script src="./scripts/functions.js"></script>
+    <script src="./scripts/editProduct.js"></script>
+</body>
+</html>
